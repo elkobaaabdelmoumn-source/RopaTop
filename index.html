@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Profesional de Zapatos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1 id="title">Tienda Profesional de Zapatos</h1>
+    <nav>
+      <button type="button" onclick="show('shop')">Tienda</button>
+      <button type="button" onclick="show('cart')">Carrito (<span id="count">0</span>)</button>
+      <button type="button" onclick="show('admin')">Admin</button>
+    </nav>
+  </header>
+
+  <!-- CONTENEDORES DE PÁGINAS -->
+  <main>
+    <!-- TIENDA -->
+    <section id="shop" class="page active" aria-label="Tienda de productos"></section>
+
+    <!-- CARRITO -->
+    <section id="cart" class="page" aria-label="Carrito de compras"></section>
+
+    <!-- ADMIN -->
+    <section id="admin" class="page" aria-label="Panel de administración"></section>
+  </main>
+
+  <!-- MENSAJES DE ALERTA / CONFIRMACIÓN -->
+  <div id="messages" role="alert" aria-live="polite"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
