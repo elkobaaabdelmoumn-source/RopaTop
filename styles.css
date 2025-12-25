@@ -1,0 +1,129 @@
+:root {
+  --main: #333;
+  --bg: #f4f4f4;
+  --card: #fff;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+}
+
+header {
+  background: var(--main);
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+header h1 {
+  flex-grow: 1;
+}
+
+header nav button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+/* GRID DE PRODUCTOS */
+#shop {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  position: relative;
+}
+
+.product-image img.main-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.product-image .label-offer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.thumbs {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.thumbs img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-info button {
+  background: var(--main);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+@media(max-width: 900px){
+  #shop {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media(max-width: 600px){
+  #shop {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
